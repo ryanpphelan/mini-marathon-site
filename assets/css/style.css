@@ -65,6 +65,7 @@ section.block.alt{background:#fff}
 .section-head{max-width:44em;margin-bottom:34px}
 .section-head h2{font-size:clamp(1.8rem,3.2vw,2.5rem)}
 .prose{max-width:44em}.prose p{color:#3c423e}.prose h2{margin-top:1.4em;font-size:1.6rem}.prose h3{margin-top:1.2em;font-size:1.2rem}
+figure.storyfig{float:left;width:340px;margin:6px 32px 14px 0}figure.storyfig img{width:100%;border-radius:16px;box-shadow:var(--shadow);display:block}figure.storyfig figcaption{font-size:.82rem;color:var(--muted);margin-top:8px;text-align:center}
 
 /* framework cards */
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -126,4 +127,5 @@ footer .legal{border-top:1px solid #3a3e3c;margin-top:30px;padding-top:18px;font
   .hero-home .inner{grid-template-columns:1fr;gap:28px}.hero-home .badge{order:-1}
   .cards3,.events,.split,footer .cols{grid-template-columns:1fr}
   .story,.goal,.panel{padding:30px}
+  figure.storyfig{float:none;width:100%;max-width:420px;margin:0 auto 22px}
 }
