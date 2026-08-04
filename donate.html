@@ -27,18 +27,66 @@
 <main id="main">
 <section class="hero-b"><div class="stripe"><i style="background:var(--magenta)"></i><i style="background:var(--purple)"></i><i style="background:var(--teal)"></i><i style="background:var(--blue)"></i><i style="background:var(--sky)"></i><i style="background:var(--gold)"></i></div><div class="inner">
   <div class="eyebrow on-green">Donate</div><h1>Your gift helps people take the next step</h1><p>Help us bring hereditary cancer awareness, testing, and support to more communities.</p></div></section>
-<section class="block"><div class="wrap">
-  <div class="notice" style="max-width:44em;margin-bottom:26px"><strong>Online giving is coming soon.</strong> We&rsquo;re finalizing our donation platform as we complete our 501(c)(3). In the meantime, you can give in person at any event, or <a href="contact.html">contact us</a> to donate directly.</div>
-  <div class="split">
-    <div class="panel"><h3>On event day</h3><p class="lead">Donations collected at the event are shared <strong>equally</strong> between the Kamie K. Preston Hereditary Cancer Foundation and the Nebraska Medicine Oncology Patient &amp; Family Experience Fund.</p></div>
-    <div class="panel"><h3>Year-round</h3><p class="lead">Gifts made to the Mini Marathon directly help us expand our reach and bring awareness, testing, and support to more communities beyond the Omaha metro over the next ten years.</p></div>
+
+<section class="block alt" style="padding-bottom:10px"><div class="wrap prose" style="text-align:center;max-width:760px">
+  <h2 style="font-size:clamp(1.7rem,3.2vw,2.3rem);margin-top:0">Somewhere, a family is about to get the call.</h2>
+  <p class="lead">The one that starts with two words: &ldquo;It&rsquo;s cancer.&rdquo; For too many families, it comes too late &mdash; after the chance to know, to test, to act has already slipped by. Your gift is how we reach the next family <em>in time</em>.</p>
+  <p class="lead">It turns fear into a plan. It puts answers in someone&rsquo;s hands before a diagnosis instead of after. And it means one more person gets to take 26.2 steps beside the people they love. When you give, you&rsquo;re standing behind someone you may never meet, on the day they need it most.</p>
+  <p class="lead" style="font-weight:600;color:var(--ink)">You can&rsquo;t change a family&rsquo;s history. But you can change what happens next.</p>
+</div></section>
+
+<section class="block" style="padding-top:12px"><div class="wrap">
+  <div class="panel" style="max-width:620px;margin:0 auto">
+    <div class="eyebrow">Make a gift</div>
+    <h3 style="margin:6px 0 18px">Support the Mini Marathon</h3>
+
+    <div class="form-field"><label>Gift type</label>
+      <div class="btnrow" id="modeRow">
+        <button type="button" class="btn btn-primary gt" data-mode="once">One-time</button>
+        <button type="button" class="btn btn-ghost gt" data-mode="monthly">Monthly</button>
+      </div>
+    </div>
+
+    <div class="form-field"><label>Amount</label>
+      <div class="btnrow" id="amtRow">
+        <button type="button" class="btn btn-ghost amt" data-amt="25">$25</button>
+        <button type="button" class="btn btn-primary amt" data-amt="50">$50</button>
+        <button type="button" class="btn btn-ghost amt" data-amt="100">$100</button>
+        <button type="button" class="btn btn-ghost amt" data-amt="250">$250</button>
+        <button type="button" class="btn btn-ghost amt" data-amt="other">Other</button>
+      </div>
+      <input id="amtOther" type="number" min="1" placeholder="Enter an amount" style="margin-top:10px;display:none">
+    </div>
+
+    <form onsubmit="return false">
+      <div class="form-field"><label style="font-weight:500"><input type="checkbox" id="dedicate" style="width:auto;margin-right:8px;vertical-align:middle">Dedicate this gift (in honor or in memory)</label>
+        <input id="dedName" type="text" placeholder="In honor / in memory of..." style="margin-top:10px;display:none"></div>
+      <div class="form-field"><label for="dname">Your name</label><input id="dname" type="text"></div>
+      <div class="form-field"><label for="demail">Email</label><input id="demail" type="email"></div>
+      <button class="btn btn-gold" id="giveBtn" type="submit" style="font-size:1.05rem">Donate $50</button>
+    </form>
+    <p class="src" style="color:var(--muted);margin-top:12px">Preview only &mdash; online giving is coming soon. No payment is processed.</p>
   </div>
 </div></section>
-<section class="block alt"><div class="wrap"><div class="goal">
+
+<section class="block alt"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Where your money goes</div><h2>Every gift has a clear path</h2></div>
+  <div class="split">
+    <div class="panel"><h3>On event day</h3><p class="lead"><strong>100%</strong> of donations collected at the event are shared <strong>equally</strong> between the Kamie K. Preston Hereditary Cancer Foundation and the Nebraska Medicine Oncology Patient &amp; Family Experience Fund.</p></div>
+    <div class="panel"><h3>Year-round</h3><p class="lead">Gifts made here support the Mini Marathon&rsquo;s own programs &mdash; awareness, education, and access to genetic testing &mdash; and help us reach more communities beyond the Omaha metro.</p></div>
+  </div>
+  <p class="notice" style="margin-top:20px">A formal annual allocation statement will be published as we complete our 501(c)(3). Donations may be tax-deductible to the extent allowed by law; please keep your receipt and consult your tax advisor.</p>
+</div></section>
+
+<section class="block"><div class="wrap"><div class="goal">
   <div class="eyebrow gold">The Next Ten Years</div><h2>Help us reach more families over the next ten years.</h2>
   <p>Every gift helps a family move from fear to a plan &mdash; education, access to genetic testing, and the support to act on what they learn.</p>
   <a class="btn btn-gold" href="contact.html">Get in touch to give</a>
 </div></div></section>
+
+<section class="block"><div class="wrap">
+  <p class="notice" style="max-width:760px;margin:0 auto"><strong>Online giving is coming soon.</strong> The giving form above is a preview of how donations will work once our platform is live. For now, you can give in person at any event or <a href="contact.html">contact us</a> to donate directly. No payment is processed on this page.</p>
+</div></section>
 </main>
 <footer class="site"><div class="wrap">
   <div class="cols">
@@ -53,8 +101,40 @@
   </div>
   <div class="legal">
     <span>&copy; 2026 26.2 Step Mini Marathon &middot; Omaha, NE &middot; EIN 42-3384604</span>
+    <span><a href="privacy.html" style="display:inline;color:#8b918d">Privacy Policy</a> &middot; <a href="terms.html" style="display:inline;color:#8b918d">Terms of Use</a></span>
     <span>Draft site &mdash; some copy &amp; figures are placeholders under review</span>
   </div>
 </div></footer>
 <script src="assets/js/main.js"></script>
+<script>
+(function(){
+  var mode="once", amt="50";
+  function label(){
+    var a = amt==="other" ? (document.getElementById("amtOther").value||"") : amt;
+    var b=document.getElementById("giveBtn");
+    if(!a){ b.textContent = mode==="monthly"?"Give monthly":"Donate"; return; }
+    b.textContent = mode==="monthly" ? ("Give $"+a+"/month") : ("Donate $"+a);
+  }
+  document.querySelectorAll(".gt").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      mode=btn.getAttribute("data-mode");
+      document.querySelectorAll(".gt").forEach(function(x){x.className="btn btn-ghost gt";});
+      btn.className="btn btn-primary gt"; label();
+    });
+  });
+  document.querySelectorAll(".amt").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      amt=btn.getAttribute("data-amt");
+      document.querySelectorAll(".amt").forEach(function(x){x.className="btn btn-ghost amt";});
+      btn.className="btn btn-primary amt";
+      document.getElementById("amtOther").style.display = amt==="other"?"block":"none";
+      label();
+    });
+  });
+  document.getElementById("amtOther").addEventListener("input",label);
+  document.getElementById("dedicate").addEventListener("change",function(){
+    document.getElementById("dedName").style.display=this.checked?"block":"none";
+  });
+})();
+</script>
 </body></html>
