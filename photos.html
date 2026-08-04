@@ -17,6 +17,25 @@
 "areaServed":"Omaha, Nebraska","description":"A nonprofit raising awareness of hereditary cancer risk, removing barriers to education and genetic testing, and helping families take informed action.",
 "sameAs":[]}
 </script>
+<style>
+.yearnav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.yearnav a{padding:6px 14px;border-radius:999px;background:#eef3ee;color:var(--green);font-weight:600;font-size:.9rem;text-decoration:none}
+.yearnav a:hover{background:var(--green);color:#fff}
+.yearnav .off{padding:6px 14px;font-size:.9rem;color:var(--muted);opacity:.55}
+.gyear{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:42px 0 16px;scroll-margin-top:80px}
+.gyear h2{margin:0;font-size:1.6rem}
+.gyear .cnt{color:var(--muted);font-size:.92rem}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.gitem{aspect-ratio:4/3;border-radius:12px;box-shadow:var(--shadow);position:relative;overflow:hidden;display:flex;align-items:flex-end;cursor:pointer;border:0;padding:0;background:#e7ece7 center/cover no-repeat;transition:.15s}
+.gitem span{position:relative;z-index:1;padding:12px 14px;color:#fff;font-size:.82rem;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,.5);text-align:left;width:100%}
+.gitem::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.5));z-index:0}
+.gitem:hover{transform:translateY(-2px)}
+.lb{position:fixed;inset:0;background:rgba(20,22,20,.93);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;flex-direction:column}
+.lb.open{display:flex}
+.lb img{max-width:min(1100px,94vw);max-height:82vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb .cap{color:#fff;margin-top:14px;font-size:.95rem}
+.lb .x{position:absolute;top:16px;right:24px;color:#fff;font-size:2.2rem;cursor:pointer;line-height:1;background:none;border:0}
+</style>
 </head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="nav">
@@ -28,10 +47,39 @@
 <section class="hero-b"><div class="stripe"><i style="background:var(--magenta)"></i><i style="background:var(--purple)"></i><i style="background:var(--teal)"></i><i style="background:var(--blue)"></i><i style="background:var(--sky)"></i><i style="background:var(--gold)"></i></div><div class="inner">
   <div class="eyebrow on-green">Photos</div><h1>Ten years, one community</h1><p>A gallery from a decade of Mini Marathons.</p></div></section>
 <section class="block"><div class="wrap">
-  <div class="section-head"><div class="eyebrow">Gallery</div><h2>Ten years, one community</h2>
-  <p class="lead">A decade of Mini Marathons, from the first steps in 2016 to our 10-year celebration in 2026. Photos are being curated from the event archive and will appear here, organized by year, with captions.</p></div>
-  <div class="panel" style="text-align:center;padding:52px 30px"><p style="margin:0;color:var(--muted)">Photo gallery coming soon &mdash; curating the best of a deep 2016&ndash;2026 archive.</p></div>
+  <div class="section-head"><div class="eyebrow">Gallery</div><h2>Ten years, organized by year</h2>
+  <p class="lead">A decade of Mini Marathons, from the first steps in 2016 to our 10-year celebration in 2026. Jump to a year, or scroll through &mdash; click any photo to enlarge.</p></div>
+
+  <div class="yearnav">
+    <span class="off">2026</span><span class="off">2025</span><span class="off">2024</span><a href="#y2023">2023</a><a href="#y2022">2022</a><span class="off">2021</span><span class="off">2020</span><span class="off">2019</span><span class="off">2018</span><span class="off">2017</span><a href="#y2016">2016</a>
+  </div>
+
+  <div class="gyear" id="y2023"><h2>2023</h2><span class="cnt">Cancer Survivors Park</span></div>
+  <div class="gallery">
+    <button type="button" class="gitem" data-full="assets/img/photos/2023-1.jpg" aria-label="Gathering at the finish" style="background-image:url('assets/img/photos/2023-1.jpg')"><span>Gathering at the finish</span></button>
+    <button type="button" class="gitem" data-full="assets/img/photos/2023-2.jpg" aria-label="Furry friends welcome" style="background-image:url('assets/img/photos/2023-2.jpg')"><span>Furry friends welcome</span></button>
+    <button type="button" class="gitem" data-full="assets/img/photos/2023-3.jpg" aria-label="Awareness in every detail" style="background-image:url('assets/img/photos/2023-3.jpg')"><span>Awareness in every detail</span></button>
+    <button type="button" class="gitem" data-full="assets/img/photos/recent-2.jpg" aria-label="Friends and family" style="background-image:url('assets/img/photos/recent-2.jpg')"><span>Friends and family</span></button>
+    <button type="button" class="gitem" data-full="assets/img/photos/recent-5.jpg" aria-label="At the photo wall" style="background-image:url('assets/img/photos/recent-5.jpg')"><span>At the photo wall</span></button>
+  </div>
+
+  <div class="gyear" id="y2022"><h2>2022</h2><span class="cnt">Cancer Survivors Park</span></div>
+  <div class="gallery">
+    <button type="button" class="gitem" data-full="assets/img/photos/2022-1.jpg" aria-label="Cheers to our volunteers" style="background-image:url('assets/img/photos/2022-1.jpg')"><span>Cheers to our volunteers</span></button>
+    <button type="button" class="gitem" data-full="assets/img/photos/recent-3.jpg" aria-label="Omaha firefighters step up" style="background-image:url('assets/img/photos/recent-3.jpg')"><span>Omaha firefighters step up</span></button>
+    <button type="button" class="gitem" data-full="assets/img/photos/recent-6.jpg" aria-label="Bringing it home" style="background-image:url('assets/img/photos/recent-6.jpg')"><span>Bringing it home</span></button>
+  </div>
+
+  <div class="gyear" id="y2016"><h2>2016</h2><span class="cnt">The first steps</span></div>
+  <div class="gallery">
+    <button type="button" class="gitem" data-full="assets/img/photos/2016-1.jpg" aria-label="Where it began" style="background-image:url('assets/img/photos/2016-1.jpg')"><span>Where it began</span></button>
+    <button type="button" class="gitem" data-full="assets/img/photos/recent-1.jpg" aria-label="Crossing the finish together" style="background-image:url('assets/img/photos/recent-1.jpg')"><span>Crossing the finish together</span></button>
+    <button type="button" class="gitem" data-full="assets/img/photos/recent-4.jpg" aria-label="Ready, step, go" style="background-image:url('assets/img/photos/recent-4.jpg')"><span>Ready, step, go!</span></button>
+  </div>
+
+  <p class="notice" style="margin-top:36px">A sample of the archive &mdash; more years and photos will be added. (Photos are grouped by year; a few here are placed illustratively for the example.)</p>
 </div></section>
+<div class="lb" id="lb"><button class="x" aria-label="Close">&times;</button><img id="lbimg" src="" alt=""><div class="cap" id="lbcap"></div></div>
 </main>
 <footer class="site"><div class="wrap">
   <div class="cols">
@@ -51,4 +99,19 @@
   </div>
 </div></footer>
 <script src="assets/js/main.js"></script>
+<script>
+(function(){
+  var lb=document.getElementById('lb'),img=document.getElementById('lbimg'),cap=document.getElementById('lbcap');
+  document.querySelectorAll('.gitem').forEach(function(b){
+    b.addEventListener('click',function(){
+      img.src=b.getAttribute('data-full');
+      cap.textContent=b.querySelector('span').textContent;
+      lb.classList.add('open');
+    });
+  });
+  function close(){lb.classList.remove('open');img.src='';}
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.classList.contains('x')) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
 </body></html>
