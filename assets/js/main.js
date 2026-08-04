@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'our-cause.html': 'CAUSE', 'denise-story.html': 'DENISE',
       'who-we-walk-for.html': 'WALK', 'advocacy.html': 'ADV',
       'stories.html': 'STORIES', 'stories-what-is-a-previvor.html': 'POST',
+      'share-your-story.html': 'SHARE',
       'events.html': 'EVENTS', 'get-involved.html': 'INVOLVE',
       'donate.html': 'DONATE', 'shop.html': 'SHOP', 'about.html': 'ABOUT',
       'partners.html': 'PARTNERS', 'press.html': 'PRESS', 'photos.html': 'PHOTOS',
