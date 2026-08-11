@@ -122,13 +122,10 @@
         return;
       }
       btn.disabled=true; var label=btn.textContent; btn.textContent="Sending…";
-      fetch("https://api.sendx.io/api/v1/form/Cp1Vr9ua60Oty0tdzZ2qT3",{method:"POST",body:new FormData(form)})
-        .then(function(r){ return r.ok; })
-        .then(function(ok){
-          if(ok){
-            form.style.display="none";
-            show("#eef7ee","#bfe0bf","#1f641d","<strong>You&rsquo;re registered!</strong> Thanks for signing up. Watch your inbox for event details.");
-          } else { throw new Error("bad status"); }
+      fetch("https://api.sendx.io/api/v1/form/Cp1Vr9ua60Oty0tdzZ2qT3",{method:"POST",mode:"no-cors",body:new FormData(form)})
+        .then(function(){
+          form.style.display="none";
+          show("#eef7ee","#bfe0bf","#1f641d","<strong>You&rsquo;re registered!</strong> Thanks for signing up. Watch your inbox for event details.");
         })
         .catch(function(){
           btn.disabled=false; btn.textContent=label;

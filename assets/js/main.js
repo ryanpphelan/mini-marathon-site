@@ -20,10 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
       var msg = form.querySelector('.nlmsg');
       var btn = form.querySelector('button');
       if (btn) btn.disabled = true;
-      fetch('https://api.sendx.io/api/v1/form/v80cnDw7d7fJeVdhsfFYDl', { method: 'POST', body: new FormData(form) })
-        .then(function (r) { return r.ok; })
-        .then(function (ok) {
-          if (!ok) throw new Error('bad status');
+      fetch('https://api.sendx.io/api/v1/form/v80cnDw7d7fJeVdhsfFYDl', { method: 'POST', mode: 'no-cors', body: new FormData(form) })
+        .then(function () {
           if (row) row.style.display = 'none';
           if (msg) { msg.innerHTML = 'Thanks! Check your inbox to confirm your subscription.'; msg.style.display = 'block'; }
         })

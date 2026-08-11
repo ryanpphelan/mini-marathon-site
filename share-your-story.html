@@ -121,13 +121,10 @@
       return;
     }
     btn.disabled=true; var label=btn.textContent; btn.textContent="Sending…";
-    fetch("https://api.sendx.io/api/v1/form/ZzQMcBt9uwsnVgNUzSTo9z",{method:"POST",body:new FormData(form)})
-      .then(function(r){ return r.ok; })
-      .then(function(ok){
-        if(ok){
-          form.style.display="none";
-          show("#eef7ee","#bfe0bf","#1f641d","<strong>Thank you for sharing.</strong> We read every story, and someone from our team will reach out if it&rsquo;s a fit. Nothing goes public without your OK.");
-        } else { throw new Error("bad status"); }
+    fetch("https://api.sendx.io/api/v1/form/ZzQMcBt9uwsnVgNUzSTo9z",{method:"POST",mode:"no-cors",body:new FormData(form)})
+      .then(function(){
+        form.style.display="none";
+        show("#eef7ee","#bfe0bf","#1f641d","<strong>Thank you for sharing.</strong> We read every story, and someone from our team will reach out if it&rsquo;s a fit. Nothing goes public without your OK.");
       })
       .catch(function(){
         btn.disabled=false; btn.textContent=label;
