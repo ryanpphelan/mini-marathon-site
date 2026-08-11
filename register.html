@@ -29,25 +29,28 @@
   <div class="eyebrow on-green">Register</div><h1>Save your spot</h1><p id="eventLine">Registration is free and open to all abilities. Walk in honor of someone you love.</p></div></section>
 
 <section class="block"><div class="wrap">
-  <p class="notice" style="max-width:760px;margin:0 auto 26px">This is a preview of the registration experience. The live form will run through our event registration system; nothing you enter here is submitted yet.</p>
+  <p class="notice" style="max-width:760px;margin:0 auto 26px">Registration is connected to our sign-up system. While the site is in preview, please treat any entries as tests.</p>
   <div class="split" style="align-items:start">
     <div class="panel">
       <h3 id="formHeading">Register for the event</h3>
-      <form onsubmit="return false">
+      <form id="regForm">
         <div class="form-field"><label for="event">Event</label>
-          <select id="event">
-            <option value="sept20">10-Year 26.2 Step Mini Marathon &mdash; Sun, Sept 20, 2026</option>
-            <option value="sept4">Cancer Survivorship Conference &mdash; Fri, Sept 4, 2026</option>
-            <option value="june25">North Omaha 26.2 Step Mini Marathon &mdash; Thu, June 25, 2027</option>
+          <select id="event" name="event" required>
+            <option value="10-Year 26.2 Step Mini Marathon - Sun, Sept 20, 2026">10-Year 26.2 Step Mini Marathon &mdash; Sun, Sept 20, 2026</option>
+            <option value="Cancer Survivorship Conference - Fri, Sept 4, 2026">Cancer Survivorship Conference &mdash; Fri, Sept 4, 2026</option>
+            <option value="North Omaha 26.2 Step Mini Marathon - Thu, June 25, 2027">North Omaha 26.2 Step Mini Marathon &mdash; Thu, June 25, 2027</option>
           </select></div>
-        <div class="form-field"><label for="name">Full name</label><input id="name" type="text"></div>
-        <div class="form-field"><label for="email">Email</label><input id="email" type="email"></div>
-        <div class="form-field"><label for="phone">Phone (optional)</label><input id="phone" type="tel"></div>
-        <div class="form-field"><label for="count">Number of participants</label><input id="count" type="number" min="1" value="1"></div>
-        <div class="form-field"><label for="honoree">Who are you walking for? (optional)</label><input id="honoree" type="text" placeholder="A name we can honor with you"></div>
-        <div class="form-field"><label for="notes">Anything we should know? (optional)</label><textarea id="notes" rows="3"></textarea></div>
-        <button class="btn btn-primary" type="submit">Complete registration</button>
+        <div class="form-field"><label for="firstName">First name</label><input id="firstName" name="First Name" type="text" required></div>
+        <div class="form-field"><label for="lastName">Last name</label><input id="lastName" name="Last Name" type="text" required></div>
+        <div class="form-field"><label for="email">Email</label><input id="email" name="Email" type="email" required></div>
+        <div class="form-field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel"></div>
+        <div class="form-field"><label for="count">Number of participants</label><input id="count" name="Participants" type="number" min="1" value="1"></div>
+        <div class="form-field"><label for="honoree">Who are you walking for? (optional)</label><input id="honoree" name="walkingFor" type="text" placeholder="A name we can honor with you"></div>
+        <div class="form-field"><label for="notes">Anything we should know? (optional)</label><textarea id="notes" name="notes" rows="3"></textarea></div>
+        <div class="g-recaptcha" data-sitekey="6LeJZv8pAAAAAHeN_IviVAfhI_Ha_dIn1klKt0TX" style="margin-bottom:16px"></div>
+        <button class="btn btn-primary" type="submit" id="regBtn">Complete registration</button>
       </form>
+      <div id="regMsg" class="notice" style="display:none;margin-top:16px"></div>
     </div>
     <div class="panel" style="background:linear-gradient(135deg,#f7faf6,#eef4ee)">
       <div class="eyebrow">Make it count</div>
@@ -83,15 +86,50 @@
     <span>Draft site &mdash; some copy &amp; figures are placeholders under review</span>
   </div>
 </div></footer>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="assets/js/main.js"></script>
 <script>
 (function(){
-  var names={sept20:"10-Year 26.2 Step Mini Marathon · Sun, Sept 20, 2026",sept4:"Cancer Survivorship Conference · Fri, Sept 4, 2026",june25:"North Omaha 26.2 Step Mini Marathon · Thu, June 25, 2027"};
+  // Preselect the event from ?event= and personalize the header.
+  var map={
+    sept20:"10-Year 26.2 Step Mini Marathon - Sun, Sept 20, 2026",
+    sept4:"Cancer Survivorship Conference - Fri, Sept 4, 2026",
+    june25:"North Omaha 26.2 Step Mini Marathon - Thu, June 25, 2027"
+  };
   var p=new URLSearchParams(window.location.search).get("event");
-  if(p&&names[p]){
-    var sel=document.getElementById("event"); if(sel){sel.value=p;}
-    document.getElementById("formHeading").textContent="Register: "+names[p].split(" · ")[0];
-    document.getElementById("eventLine").textContent="You’re registering for the "+names[p]+". Free and open to all abilities.";
+  if(p&&map[p]){
+    var sel=document.getElementById("event"); if(sel){sel.value=map[p];}
+    document.getElementById("formHeading").textContent="Register: "+map[p].split(" - ")[0];
+    document.getElementById("eventLine").textContent="You’re registering for the "+map[p]+". Free and open to all abilities.";
+  }
+
+  // Submit to SendX (form Cp1Vr9ua60Oty0tdzZ2qT3) and show an on-brand confirmation.
+  var form=document.getElementById("regForm");
+  var msg=document.getElementById("regMsg");
+  var btn=document.getElementById("regBtn");
+  if(form){
+    form.addEventListener("submit",function(e){
+      e.preventDefault();
+      function show(bg,bd,fg,html){ msg.style.display="block"; msg.style.background=bg; msg.style.borderColor=bd; msg.style.color=fg; msg.innerHTML=html; }
+      // If reCAPTCHA is present, require it before sending.
+      if(window.grecaptcha && typeof grecaptcha.getResponse==="function" && !grecaptcha.getResponse()){
+        show("#fff6da","#f0dd94","#6b5a12","Please complete the &ldquo;I&rsquo;m not a robot&rdquo; check, then submit again.");
+        return;
+      }
+      btn.disabled=true; var label=btn.textContent; btn.textContent="Sending…";
+      fetch("https://api.sendx.io/api/v1/form/Cp1Vr9ua60Oty0tdzZ2qT3",{method:"POST",body:new FormData(form)})
+        .then(function(r){ return r.ok; })
+        .then(function(ok){
+          if(ok){
+            form.style.display="none";
+            show("#eef7ee","#bfe0bf","#1f641d","<strong>You&rsquo;re registered!</strong> Thanks for signing up. Watch your inbox for event details.");
+          } else { throw new Error("bad status"); }
+        })
+        .catch(function(){
+          btn.disabled=false; btn.textContent=label;
+          show("#fdecef","#f3c0c9","#8a1f33","Something went wrong submitting your registration. Please try again, or email <a href=\"mailto:contact@262minimarathon.com\">contact@262minimarathon.com</a>.");
+        });
+    });
   }
 })();
 </script>
