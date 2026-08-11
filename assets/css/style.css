@@ -129,3 +129,14 @@ footer .legal{border-top:1px solid #3a3e3c;margin-top:30px;padding-top:18px;font
   .story,.goal,.panel{padding:30px}
   figure.storyfig{float:none;width:100%;max-width:420px;margin:0 auto 22px}
 }
+
+
+/* footer newsletter */
+.footnl{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;border-top:1px solid #3a3e3c;margin-top:30px;padding-top:22px}
+.footnl .footnl-copy{flex:1 1 260px}
+.footnl h4{color:#fff;font-family:Inter;font-weight:600;font-size:.95rem;letter-spacing:normal;text-transform:none;margin:0 0 4px}
+.footnl p{color:#aab0ac;margin:0;font-size:.9rem;max-width:34em}
+.footnl .nlrow{display:flex;gap:8px;flex-wrap:wrap}
+.footnl input{min-width:230px;padding:12px 16px;border:1px solid #3a3e3c;border-radius:999px;background:#fff;color:#262928;font-size:.95rem;font-family:inherit}
+.footnl .btn{white-space:nowrap}
+@media(max-width:620px){.footnl input{flex:1;min-width:0}.footnl .nlrow{width:100%}}

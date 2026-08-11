@@ -10,6 +10,31 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// Newsletter forms (footer + Stories panel) -> SendX form v80cnDw7d7fJeVdhsfFYDl.
+// Email only, no captcha; SendX double opt-in confirms the address.
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('form.nlform').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var row = form.querySelector('.nlrow');
+      var msg = form.querySelector('.nlmsg');
+      var btn = form.querySelector('button');
+      if (btn) btn.disabled = true;
+      fetch('https://api.sendx.io/api/v1/form/v80cnDw7d7fJeVdhsfFYDl', { method: 'POST', body: new FormData(form) })
+        .then(function (r) { return r.ok; })
+        .then(function (ok) {
+          if (!ok) throw new Error('bad status');
+          if (row) row.style.display = 'none';
+          if (msg) { msg.innerHTML = 'Thanks! Check your inbox to confirm your subscription.'; msg.style.display = 'block'; }
+        })
+        .catch(function () {
+          if (btn) btn.disabled = false;
+          if (msg) { msg.innerHTML = 'Something went wrong. Please try again.'; msg.style.display = 'block'; }
+        });
+    });
+  });
+});
+
 // Review mode: add ?review=1 to any page URL to reveal section codes for board feedback.
 // Hidden by default. Codes auto-number top-to-bottom using a per-page prefix.
 document.addEventListener('DOMContentLoaded', function () {
@@ -22,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'our-cause.html': 'CAUSE', 'denise-story.html': 'DENISE',
       'who-we-walk-for.html': 'WALK', 'advocacy.html': 'ADV',
       'stories.html': 'STORIES', 'stories-what-is-a-previvor.html': 'POST',
-      'share-your-story.html': 'SHARE',
+      'share-your-story.html': 'SHARE', 'volunteer.html': 'VOLUNTEER',
       'events.html': 'EVENTS', 'get-involved.html': 'INVOLVE',
       'donate.html': 'DONATE', 'shop.html': 'SHOP', 'about.html': 'ABOUT',
       'partners.html': 'PARTNERS', 'press.html': 'PRESS', 'photos.html': 'PHOTOS',
