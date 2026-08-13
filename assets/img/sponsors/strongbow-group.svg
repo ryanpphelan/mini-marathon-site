@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 108" role="img" aria-label="The Strongbow Group">
+  <text x="150" y="26" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="14" letter-spacing="8" fill="#6b7685">THE</text>
+  <text x="150" y="66" text-anchor="middle" font-family="Poppins, 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="42" fill="#1B2A4A" letter-spacing="-0.5">Strongbow</text>
+  <line x1="96" y1="83" x2="204" y2="83" stroke="#c4ccd6" stroke-width="1.5"/>
+  <text x="150" y="100" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="13" letter-spacing="9" fill="#6b7685">GROUP</text>
+</svg>

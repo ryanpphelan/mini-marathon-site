@@ -11,6 +11,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.bcard{background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:26px 22px;text-align:center}
+.bphoto{width:96px;height:96px;border-radius:50%;margin:0 auto 14px;object-fit:cover;display:flex;align-items:center;justify-content:center;font-family:Poppins,sans-serif;font-weight:700;font-size:1.9rem;color:#fff;overflow:hidden}
+.bcard h3{margin:0 0 2px}
+.bcard .brole{color:var(--green);font-weight:700;margin:0 0 10px;font-size:.95rem}
+.bcard p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.5}
+@media(max-width:760px){.board{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.board{grid-template-columns:1fr}}
+</style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NGO","name":"26.2 Step Mini Marathon","alternateName":"26.2 Step Mini Marathon",
 "url":"https://www.262minimarathon.com/","logo":"https://www.262minimarathon.com/assets/img/logo.jpg","foundingDate":"2016","founder":{"@type":"Person","name":"Denise Ibsen Cole"},
@@ -20,7 +30,7 @@
 </head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="nav">
-  <a class="brand" href="index.html"><img src="assets/img/logo.jpg" alt="26.2 Step Mini Marathon logo"> 26.2 Step Mini Marathon</a>
+  <a class="brand" href="index.html"><img src="assets/img/logo-oval.png" alt="26.2 Step Mini Marathon logo"> 26.2 Step Mini Marathon</a>
   <button class="menu-btn" aria-label="Menu">&#9776;</button>
   <nav class="nav-links" id="nav"><a href="our-cause.html" class="active">Our Cause</a><a href="denise-story.html">Denise's Story</a><a href="events.html">Events</a><a href="get-involved.html">Get Involved</a><a href="shop.html">Shop</a><a class="btn btn-gold" href="donate.html">Donate</a></nav>
 </div></header>
@@ -34,32 +44,49 @@
 <section class="block alt"><div class="wrap">
   <div class="section-head"><div class="eyebrow">Board &amp; Leadership</div><h2>The people behind the Mini Marathon</h2>
   <p class="lead">A volunteer board leads the organization, supported by a medical advisor. Bios and photos are being added.</p></div>
-  <div class="cards3">
-    <div class="card"><span class="tag" style="background:var(--magenta)"></span><h3>Denise Ibsen Cole</h3><p style="margin:0 0 8px;color:var(--green);font-weight:700">Founder</p><p>Patient advocate, BRCA1 previvor, and the heart of the Mini Marathon. <a href="denise-story.html">Read her story.</a></p></div>
-    <div class="card"><span class="tag" style="background:var(--purple)"></span><h3>Damien Foster, CPA</h3><p style="margin:0 0 8px;color:var(--green);font-weight:700">Treasurer</p><p>Bio coming soon.</p></div>
-    <div class="card"><span class="tag" style="background:var(--teal)"></span><h3>Ryan Phelan</h3><p style="margin:0 0 8px;color:var(--green);font-weight:700">Board Member</p><p>Bio coming soon.</p></div>
-    <div class="card"><span class="tag" style="background:var(--blue)"></span><h3>Angela Smith</h3><p style="margin:0 0 8px;color:var(--green);font-weight:700">Board Member</p><p>Bio coming soon.</p></div>
-    <div class="card"><span class="tag" style="background:var(--sky)"></span><h3>Jody Collins Skinner</h3><p style="margin:0 0 8px;color:var(--green);font-weight:700">Board Member</p><p>Bio coming soon.</p></div>
-    <div class="card"><span class="tag" style="background:var(--gold)"></span><h3>Kathy Johnson</h3><p style="margin:0 0 8px;color:var(--green);font-weight:700">Board Member</p><p>Bio coming soon.</p></div>
+  <div class="board">
+    <div class="bcard"><div class="bphoto" style="background:var(--magenta)">DC</div><h3>Denise Ibsen Cole</h3><p class="brole">Executive Director &amp; Founder</p><p>Patient advocate, BRCA1 carrier, and the heart of the Mini Marathon. <a href="denise-story.html">Read her story.</a></p></div>
+    <div class="bcard"><img class="bphoto" src="assets/img/board/angela-smith.jpg" alt="Angela Smith"><h3>Angela Smith, MBA</h3><p class="brole">President</p><p>Founder &amp; CEO of <a href="https://www.worknouveau.co/" target="_blank" rel="noopener">Work Nouveau</a>, a boutique HR consulting agency, and a talent and organizational-development leader who builds intentional, inclusive cultures for purpose-driven organizations.</p></div>
+    <div class="bcard"><div class="bphoto" style="background:var(--teal)">JS</div><h3>Jody Collins Skinner</h3><p class="brole">Vice Chair</p><p>Bio coming soon.</p></div>
+    <div class="bcard"><div class="bphoto" style="background:var(--blue)">RP</div><h3>Ryan Phelan</h3><p class="brole">Secretary</p><p>Bio coming soon.</p></div>
+    <div class="bcard"><div class="bphoto" style="background:var(--sky)">DF</div><h3>Damien Foster, CPA</h3><p class="brole">Treasurer</p><p>Bio coming soon.</p></div>
+    <div class="bcard"><div class="bphoto" style="background:var(--gold);color:var(--ink)">KJ</div><h3>Kathy Johnson</h3><p class="brole">Board Member</p><p>Bio coming soon.</p></div>
   </div>
   <div class="panel" style="margin-top:22px"><h3>Medical Advisor</h3><p style="margin:0"><strong>Kerry Rodabaugh, MD</strong> &mdash; guides the organization on medical accuracy and helps keep our education current and trustworthy.</p></div>
 </div></section>
 
+<section class="block alt"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Our Logo</div><h2>The story behind the 10-year logo</h2></div>
+  <div class="split" style="align-items:center;gap:40px">
+    <div style="text-align:center"><img src="assets/img/logo.jpg" alt="26.2 Step Mini Marathon 10-year logo" style="max-width:300px;width:100%;border-radius:12px"></div>
+    <div class="prose">
+      <p class="lead">Every part of our 10-year logo carries meaning:</p>
+      <ul class="linklist">
+        <li><strong>Five flowers</strong> represent five high-risk hereditary cancers: breast, ovarian, colon (including Lynch syndrome), pancreatic, and prostate.</li>
+        <li><strong>The colors</strong> tie it together, with the yellow centers as the through-line and the purple and blue together representing bladder cancer.</li>
+        <li><strong>The black outer circle</strong> is a protector, standing for skin cancer.</li>
+        <li><strong>The leaves and vines</strong> form a family tree, a reminder of how much your family health history matters.</li>
+        <li><strong>And the steps:</strong> sometimes you just have to step back to see the full picture.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
 <section class="block"><div class="wrap prose">
   <h2>Transparency</h2>
-  <p>The 26.2 Step Mini Marathon is a 501(c)(3) nonprofit in formation (EIN 42-3384604). We are board-run and meet quarterly. Donations made on event day are shared equally with our partner charities; year-round gifts support the Mini Marathon&rsquo;s own growth. Full tax-exempt determination language will be added once approved.</p>
+  <p>The 26.2 Step Mini Marathon is a 501(c)(3) nonprofit in formation (EIN 42-3384604). We are board-run and meet quarterly. Donations made on event day are shared equally with our partner charities; year-round gifts support the Mini Marathon&rsquo;s own growth. Full tax-exempt determination language will be added once approved. For a plain-language breakdown of where every dollar goes, see our <a href="full-transparency.html">Full Transparency</a> page.</p>
 </div></section>
 </main>
 <footer class="site"><div class="wrap">
   <div class="cols">
     <div>
-      <div class="fbrand"><img src="assets/img/logo.jpg" alt=""> 26.2 Step Mini Marathon</div>
+      <div class="fbrand"><img src="assets/img/logo-oval.png" alt=""> 26.2 Step Mini Marathon</div>
       <p class="mission">Raising awareness of hereditary cancer risk, removing barriers to education and genetic testing, and helping families take informed action &mdash; before cancer is found at a late stage.</p>
       <span class="pill">A 501(c)(3) nonprofit in formation</span>
-      <div style="margin-top:14px;font-size:.95rem"><a href="https://www.facebook.com/26.2stepminimarathon" target="_blank" rel="noopener" style="display:inline;margin:0">Facebook</a> &middot; <a href="https://www.instagram.com/26.2stepminimarathon" target="_blank" rel="noopener" style="display:inline;margin:0">Instagram</a> &middot; <a href="https://twitter.com/262stepminimar1" target="_blank" rel="noopener" style="display:inline;margin:0">Twitter/X</a></div>
+      <div style="margin-top:14px;font-size:.95rem"><a href="https://www.facebook.com/26.2stepminimarathon" target="_blank" rel="noopener" style="display:inline;margin:0">Facebook</a> &middot; <a href="https://www.instagram.com/26.2stepminimarathon" target="_blank" rel="noopener" style="display:inline;margin:0">Instagram</a></div>
     </div>
     <div><h4>Explore</h4><a href="our-cause.html">Our Cause</a><a href="denise-story.html">Denise&rsquo;s Story</a><a href="who-we-walk-for.html">Who We Walk For</a><a href="events.html">Events</a><a href="get-involved.html">Get Involved</a><a href="shop.html">Shop</a><a href="resources.html">Resources</a><a href="advocacy.html">Advocacy</a><a href="stories.html">Stories</a></div>
-    <div><h4>Connect</h4><a href="donate.html">Donate</a><a href="about.html">About &amp; Board</a><a href="partners.html">Partners</a><a href="press.html">Press</a><a href="photos.html">Photos</a><a href="contact.html">Contact</a></div>
+    <div><h4>Connect</h4><a href="donate.html">Donate</a><a href="about.html">About &amp; Board</a><a href="full-transparency.html">Full Transparency</a><a href="partners.html">Partners</a><a href="press.html">Press</a><a href="photos.html">Photos</a><a href="contact.html">Contact</a></div>
   </div>
     <form class="footnl nlform" novalidate>
     <div class="footnl-copy"><h4>Stay in the loop</h4><p>Event news and new stories, a few times a year. No spam.</p></div>

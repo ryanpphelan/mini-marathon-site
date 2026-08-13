@@ -20,7 +20,7 @@
 </head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="nav">
-  <a class="brand" href="index.html"><img src="assets/img/logo.jpg" alt="26.2 Step Mini Marathon logo"> 26.2 Step Mini Marathon</a>
+  <a class="brand" href="index.html"><img src="assets/img/logo-oval.png" alt="26.2 Step Mini Marathon logo"> 26.2 Step Mini Marathon</a>
   <button class="menu-btn" aria-label="Menu">&#9776;</button>
   <nav class="nav-links" id="nav"><a href="our-cause.html">Our Cause</a><a href="denise-story.html">Denise's Story</a><a href="events.html">Events</a><a href="get-involved.html">Get Involved</a><a href="shop.html">Shop</a><a class="btn btn-gold" href="donate.html">Donate</a></nav>
 </div></header>
@@ -33,6 +33,9 @@
   <div class="split" style="align-items:start">
     <div class="panel">
       <h3 id="formHeading">Register for the event</h3>
+      <div id="extReg" class="notice" style="display:none;margin-bottom:16px">
+        <strong>This event is registered through Nebraska Medicine.</strong> The Cancer Survivorship Conference (Friday, September 4, 2026) is hosted by Nebraska Medicine, and registration is handled on their site. Please sign up on the <a href="https://www.nebraskamed.com/cancer/cancer-survivorship-program/events" target="_blank" rel="noopener">Nebraska Medicine events page</a>. The conference runs 8:00 am&ndash;2:00 pm; the Mini Marathon portion is 10:30&ndash;11:00 am.
+      </div>
       <form id="regForm">
         <div class="form-field"><label for="event">Event</label>
           <select id="event" name="event" required>
@@ -45,6 +48,13 @@
         <div class="form-field"><label for="email">Email</label><input id="email" name="Email" type="email" required></div>
         <div class="form-field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel"></div>
         <div class="form-field"><label for="count">Number of participants</label><input id="count" name="Participants" type="number" min="1" value="1"></div>
+        <div class="form-field"><label style="font-weight:400"><input type="checkbox" id="firstTime" name="firstTime" value="Yes" style="width:auto;margin-right:8px;vertical-align:middle">This is my first time attending a Mini Marathon event.</label></div>
+        <div class="form-field"><label for="state">Home state (optional)</label>
+          <select id="state" name="state">
+            <option value="" selected>Select your state (optional)&hellip;</option>
+            <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option><option>Outside the U.S.</option>
+          </select></div>
+        <p class="src" style="color:var(--muted);margin:-6px 0 14px">We ask whether it&rsquo;s your first time and where you&rsquo;re from just to understand how far our reach extends. Both are optional.</p>
         <div class="form-field"><label for="honoree">Who are you walking for? (optional)</label><input id="honoree" name="walkingFor" type="text" placeholder="A name we can honor with you"></div>
         <div class="form-field"><label for="notes">Anything we should know? (optional)</label><textarea id="notes" name="notes" rows="3"></textarea></div>
         <div class="g-recaptcha" data-sitekey="6LeJZv8pAAAAAHeN_IviVAfhI_Ha_dIn1klKt0TX" style="margin-bottom:16px"></div>
@@ -72,13 +82,13 @@
 <footer class="site"><div class="wrap">
   <div class="cols">
     <div>
-      <div class="fbrand"><img src="assets/img/logo.jpg" alt=""> 26.2 Step Mini Marathon</div>
+      <div class="fbrand"><img src="assets/img/logo-oval.png" alt=""> 26.2 Step Mini Marathon</div>
       <p class="mission">Raising awareness of hereditary cancer risk, removing barriers to education and genetic testing, and helping families take informed action &mdash; before cancer is found at a late stage.</p>
       <span class="pill">A 501(c)(3) nonprofit in formation</span>
-      <div style="margin-top:14px;font-size:.95rem"><a href="https://www.facebook.com/26.2stepminimarathon" target="_blank" rel="noopener" style="display:inline;margin:0">Facebook</a> &middot; <a href="https://www.instagram.com/26.2stepminimarathon" target="_blank" rel="noopener" style="display:inline;margin:0">Instagram</a> &middot; <a href="https://twitter.com/262stepminimar1" target="_blank" rel="noopener" style="display:inline;margin:0">Twitter/X</a></div>
+      <div style="margin-top:14px;font-size:.95rem"><a href="https://www.facebook.com/26.2stepminimarathon" target="_blank" rel="noopener" style="display:inline;margin:0">Facebook</a> &middot; <a href="https://www.instagram.com/26.2stepminimarathon" target="_blank" rel="noopener" style="display:inline;margin:0">Instagram</a></div>
     </div>
     <div><h4>Explore</h4><a href="our-cause.html">Our Cause</a><a href="denise-story.html">Denise&rsquo;s Story</a><a href="who-we-walk-for.html">Who We Walk For</a><a href="events.html">Events</a><a href="get-involved.html">Get Involved</a><a href="shop.html">Shop</a><a href="resources.html">Resources</a><a href="advocacy.html">Advocacy</a><a href="stories.html">Stories</a></div>
-    <div><h4>Connect</h4><a href="donate.html">Donate</a><a href="about.html">About &amp; Board</a><a href="partners.html">Partners</a><a href="press.html">Press</a><a href="photos.html">Photos</a><a href="contact.html">Contact</a></div>
+    <div><h4>Connect</h4><a href="donate.html">Donate</a><a href="about.html">About &amp; Board</a><a href="full-transparency.html">Full Transparency</a><a href="partners.html">Partners</a><a href="press.html">Press</a><a href="photos.html">Photos</a><a href="contact.html">Contact</a></div>
   </div>
     <form class="footnl nlform" novalidate>
     <div class="footnl-copy"><h4>Stay in the loop</h4><p>Event news and new stories, a few times a year. No spam.</p></div>
@@ -107,6 +117,17 @@
     document.getElementById("formHeading").textContent="Register: "+map[p].split(" - ")[0];
     document.getElementById("eventLine").textContent="You’re registering for the "+map[p]+". Free and open to all abilities.";
   }
+
+  // Cancer Survivorship Conference registers via Nebraska Medicine, not here.
+  var evSel=document.getElementById("event");
+  var extReg=document.getElementById("extReg");
+  var regForm0=document.getElementById("regForm");
+  function toggleExt(){
+    var isConf=evSel && /Cancer Survivorship Conference/i.test(evSel.value);
+    if(extReg) extReg.style.display=isConf?"block":"none";
+    if(regForm0) regForm0.style.display=isConf?"none":"";
+  }
+  if(evSel){ evSel.addEventListener("change",toggleExt); toggleExt(); }
 
   // Submit to SendX (form Cp1Vr9ua60Oty0tdzZ2qT3) and show an on-brand confirmation.
   var form=document.getElementById("regForm");
