@@ -40,7 +40,6 @@
         <div class="form-field"><label for="event">Event</label>
           <select id="event" name="event" required>
             <option value="10-Year 26.2 Step Mini Marathon - Sun, Sept 20, 2026">10-Year 26.2 Step Mini Marathon &mdash; Sun, Sept 20, 2026</option>
-            <option value="Cancer Survivorship Conference - Fri, Sept 4, 2026">Cancer Survivorship Conference &mdash; Fri, Sept 4, 2026</option>
             <option value="North Omaha 26.2 Step Mini Marathon - Thu, June 25, 2027">North Omaha 26.2 Step Mini Marathon &mdash; Thu, June 25, 2027</option>
           </select></div>
         <div class="form-field"><label for="firstName">First name</label><input id="firstName" name="First Name" type="text" required></div>
@@ -108,26 +107,23 @@
   // Preselect the event from ?event= and personalize the header.
   var map={
     sept20:"10-Year 26.2 Step Mini Marathon - Sun, Sept 20, 2026",
-    sept4:"Cancer Survivorship Conference - Fri, Sept 4, 2026",
     june25:"North Omaha 26.2 Step Mini Marathon - Thu, June 25, 2027"
   };
   var p=new URLSearchParams(window.location.search).get("event");
-  if(p&&map[p]){
+  var extReg=document.getElementById("extReg");
+  var regForm0=document.getElementById("regForm");
+
+  if(p==="sept4"){
+    // The Cancer Survivorship Conference registers through Nebraska Medicine, not here.
+    if(extReg) extReg.style.display="block";
+    if(regForm0) regForm0.style.display="none";
+    document.getElementById("formHeading").textContent="Cancer Survivorship Conference";
+    document.getElementById("eventLine").textContent="Registration for the Cancer Survivorship Conference is handled by Nebraska Medicine.";
+  } else if(p&&map[p]){
     var sel=document.getElementById("event"); if(sel){sel.value=map[p];}
     document.getElementById("formHeading").textContent="Register: "+map[p].split(" - ")[0];
     document.getElementById("eventLine").textContent="You’re registering for the "+map[p]+". Free and open to all abilities.";
   }
-
-  // Cancer Survivorship Conference registers via Nebraska Medicine, not here.
-  var evSel=document.getElementById("event");
-  var extReg=document.getElementById("extReg");
-  var regForm0=document.getElementById("regForm");
-  function toggleExt(){
-    var isConf=evSel && /Cancer Survivorship Conference/i.test(evSel.value);
-    if(extReg) extReg.style.display=isConf?"block":"none";
-    if(regForm0) regForm0.style.display=isConf?"none":"";
-  }
-  if(evSel){ evSel.addEventListener("change",toggleExt); toggleExt(); }
 
   // Submit to SendX (form Cp1Vr9ua60Oty0tdzZ2qT3) and show an on-brand confirmation.
   var form=document.getElementById("regForm");
