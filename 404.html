@@ -1,4 +1,22 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<script>
+/* Redirect old Wix URLs to their new pages. GitHub Pages serves this 404
+   page for any path with no matching file, so we map the old slugs here. */
+(function(){
+  var map={
+    "/photo-albums":"/photos.html",
+    "/press-media":"/press.html",
+    "/about-5":"/about.html",
+    "/resources":"/resources.html",
+    "/general-5":"/register.html",
+    "/general-8":"/volunteer.html"
+  };
+  var path=window.location.pathname.replace(/\/+$/,"");
+  if(Object.prototype.hasOwnProperty.call(map,path)){
+    window.location.replace(map[path]+window.location.search+window.location.hash);
+  }
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><title>Page not found — 26.2 Step Mini Marathon</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
