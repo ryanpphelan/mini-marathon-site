@@ -41,6 +41,10 @@
       <div class="eyebrow">Tell us your story</div>
       <h3 style="margin:6px 0 18px">Your submission</h3>
       <form id="storyForm">
+        <input type="hidden" name="access_key" value="259fbfd5-268a-4be3-a9e1-1374c22312f2">
+        <input type="hidden" name="subject" value="New story submission from the 26.2 Step Mini Marathon website">
+        <input type="hidden" name="from_name" value="26.2 Step Mini Marathon website">
+        <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none">
         <div class="form-field"><label for="firstName">First name</label><input id="firstName" name="First Name" type="text" required></div>
         <div class="form-field"><label for="lastName">Last name</label><input id="lastName" name="Last Name" type="text" required></div>
         <div class="form-field"><label for="semail">Email</label><input id="semail" name="Email" type="email" required></div>
@@ -121,10 +125,16 @@
       return;
     }
     btn.disabled=true; var label=btn.textContent; btn.textContent="Sending…";
-    fetch("https://api.sendx.io/api/v1/form/ZzQMcBt9uwsnVgNUzSTo9z",{method:"POST",mode:"no-cors",body:new FormData(form)})
-      .then(function(){
-        form.style.display="none";
-        show("#eef7ee","#bfe0bf","#1f641d","<strong>Thank you for sharing.</strong> We read every story, and someone from our team will reach out if it&rsquo;s a fit. Nothing goes public without your OK.");
+    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Accept":"application/json"},body:new FormData(form)})
+      .then(function(r){return r.json();})
+      .then(function(data){
+        if(data && data.success){
+          form.style.display="none";
+          show("#eef7ee","#bfe0bf","#1f641d","<strong>Thank you for sharing.</strong> We read every story, and someone from our team will reach out if it&rsquo;s a fit. Nothing goes public without your OK.");
+        } else {
+          btn.disabled=false; btn.textContent=label;
+          show("#fdecef","#f3c0c9","#8a1f33","Something went wrong sending your story. Please try again, or email <a href=\"mailto:contact@262minimarathon.com\">contact@262minimarathon.com</a>.");
+        }
       })
       .catch(function(){
         btn.disabled=false; btn.textContent=label;

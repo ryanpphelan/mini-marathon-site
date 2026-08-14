@@ -38,7 +38,20 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   try {
     var params = new URLSearchParams(window.location.search);
-    if (params.get('review') !== '1') return;
+    var reviewOn = params.get('review') === '1';
+    try { if (!reviewOn && sessionStorage.getItem('mm_review') === '1') reviewOn = true; } catch (e) {}
+    if (!reviewOn) return;
+    try { sessionStorage.setItem('mm_review', '1'); } catch (e) {}
+
+    // Keep review mode on as you click through the site: carry ?review=1 onto internal page links.
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var h = a.getAttribute('href');
+      if (!h || /^[a-z]+:/i.test(h) || h.charAt(0) === '#' || h.charAt(0) === '/') return;
+      if (!/\.html(\?|#|$)/i.test(h) || /[?&]review=1/.test(h)) return;
+      var hash = '', base = h, hi = h.indexOf('#');
+      if (hi >= 0) { hash = h.slice(hi); base = h.slice(0, hi); }
+      a.setAttribute('href', base + (base.indexOf('?') >= 0 ? '&' : '?') + 'review=1' + hash);
+    });
 
     var PREFIX = {
       'index.html': 'HOME', '': 'HOME', '/': 'HOME',
@@ -125,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
       + '<a id="mm-exit">Exit review mode</a>';
     document.body.appendChild(bar);
     document.getElementById('mm-exit').addEventListener('click', function () {
+      try { sessionStorage.removeItem('mm_review'); } catch (e) {}
       params.delete('review');
       var q = params.toString();
       window.location.href = window.location.pathname + (q ? '?' + q : '') + window.location.hash;

@@ -28,14 +28,18 @@
 <section class="hero-b"><div class="stripe"><i style="background:var(--magenta)"></i><i style="background:var(--purple)"></i><i style="background:var(--teal)"></i><i style="background:var(--blue)"></i><i style="background:var(--sky)"></i><i style="background:var(--gold)"></i></div><div class="inner">
   <div class="eyebrow on-green">Contact</div><h1>Get in touch</h1><p>Questions, volunteering, partnerships, press, or giving &mdash; we&rsquo;d love to hear from you.</p></div></section>
 <section class="block"><div class="wrap" style="max-width:640px">
-  <form onsubmit="return false">
-    <div class="form-field"><label for="name">Name</label><input id="name" type="text"></div>
-    <div class="form-field"><label for="email">Email</label><input id="email" type="email"></div>
-    <div class="form-field"><label for="reason">Reason</label><select id="reason"><option>Participate</option><option>Volunteer</option><option>Donate</option><option>Partner / Sponsor</option><option>Press</option><option>Other</option></select></div>
-    <div class="form-field"><label for="msg">Message</label><textarea id="msg" rows="5"></textarea></div>
-    <button class="btn btn-primary" type="submit">Send</button>
+  <form id="contactForm">
+    <input type="hidden" name="access_key" value="51060a8b-3a4a-454a-8260-58d7f9c2211b">
+    <input type="hidden" name="subject" value="New message from the 26.2 Step Mini Marathon website">
+    <input type="hidden" name="from_name" value="26.2 Step Mini Marathon website">
+    <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none">
+    <div class="form-field"><label for="name">Name</label><input id="name" name="name" type="text" required></div>
+    <div class="form-field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+    <div class="form-field"><label for="reason">Reason</label><select id="reason" name="reason"><option>Participate</option><option>Volunteer</option><option>Partner / Sponsor</option><option>Press</option><option>Other</option></select></div>
+    <div class="form-field"><label for="msg">Message</label><textarea id="msg" name="message" rows="5" required></textarea></div>
+    <button class="btn btn-primary" type="submit" id="contactBtn">Send</button>
   </form>
-  <p class="notice" style="margin-top:20px">Form is a placeholder. In production it connects to a static-friendly form service (no server needed on GitHub Pages).</p>
+  <div id="contactMsg" class="notice" style="display:none;margin-top:16px"></div>
   <div class="panel" style="margin-top:26px">
     <h3>Reach us directly</h3>
     <ul class="linklist">
@@ -70,4 +74,32 @@
   </div>
 </div></footer>
 <script src="assets/js/main.js"></script>
+<script>
+(function(){
+  var form=document.getElementById("contactForm");
+  if(!form) return;
+  var msg=document.getElementById("contactMsg");
+  var btn=document.getElementById("contactBtn");
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    function show(bg,bd,fg,html){ msg.style.display="block"; msg.style.background=bg; msg.style.borderColor=bd; msg.style.color=fg; msg.innerHTML=html; }
+    btn.disabled=true; var label=btn.textContent; btn.textContent="Sending…";
+    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Accept":"application/json"},body:new FormData(form)})
+      .then(function(r){return r.json();})
+      .then(function(data){
+        if(data && data.success){
+          form.style.display="none";
+          show("#eef7ee","#bfe0bf","#1f641d","<strong>Thanks for reaching out!</strong> Your message is on its way to our team, and we&rsquo;ll get back to you soon.");
+        } else {
+          btn.disabled=false; btn.textContent=label;
+          show("#fdecef","#f3c0c9","#8a1f33","Something went wrong sending your message. Please try again, or email <a href=\"mailto:contact@262minimarathon.com\">contact@262minimarathon.com</a>.");
+        }
+      })
+      .catch(function(){
+        btn.disabled=false; btn.textContent=label;
+        show("#fdecef","#f3c0c9","#8a1f33","Something went wrong sending your message. Please try again, or email <a href=\"mailto:contact@262minimarathon.com\">contact@262minimarathon.com</a>.");
+      });
+  });
+})();
+</script>
 </body></html>
