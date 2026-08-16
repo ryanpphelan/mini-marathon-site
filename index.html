@@ -12,10 +12,10 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
 .impact{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.impact .stat{background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:26px 20px;text-align:center;border-top:5px solid var(--green)}
+.impact .stat{background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:26px 20px;text-align:center;border-top:5px solid var(--green);min-width:0}
 .impact .n{font-family:Poppins;font-weight:800;font-size:2.4rem;line-height:1}
 .impact .l{margin-top:8px;color:var(--muted);font-size:.95rem;line-height:1.4}
-@media(max-width:760px){.impact{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.impact{grid-template-columns:1fr 1fr;gap:12px}.impact .stat{padding:22px 14px}.impact .n{font-size:1.85rem}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NGO","name":"26.2 Step Mini Marathon","alternateName":"26.2 Step Mini Marathon",
