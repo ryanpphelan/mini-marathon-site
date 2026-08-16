@@ -25,6 +25,5 @@
 - /denise-story.html: the founder's story.
 - /events.html: schedule and details.
 - /resources.html: trusted links and FAQs.
-- /donate.html: how giving works.
 - /full-transparency.html: where the money goes (at least 70% to the mission) and why the first year as an independent nonprofit costs more.
 - /about.html: the board, medical advisor, and the story behind the logo.
