@@ -28,8 +28,18 @@
 .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:26px}
 .post{display:flex;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:.15s}
 .post:hover{transform:translateY(-3px)}
-.post .top{height:120px;position:relative;display:flex;align-items:flex-end;padding:14px}
-.post .top .cat{background:rgba(255,255,255,.9)}
+.post .top{height:130px;position:relative;display:flex;align-items:flex-end;padding:14px;overflow:hidden}
+.post .top .cat{background:rgba(255,255,255,.92);position:relative;z-index:2}
+.post .top .wm{position:absolute;right:-8px;bottom:-16px;width:108px;height:108px;color:#fff;opacity:.22;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;z-index:1}
+.top.c-edu{background:linear-gradient(135deg,#123a8f,#2f61cf)}
+.top.c-adv{background:linear-gradient(135deg,#6d1186,#a230b9)}
+.top.c-com{background:linear-gradient(135deg,#8a2a4f,#c44d79)}
+.top.c-story{background:linear-gradient(135deg,#164f14,#2f8f2c)}
+.top.c-expert{background:linear-gradient(135deg,#1c6675,#35a0b3)}
+.top.c-event{background:linear-gradient(135deg,#a9760f,#dbac2e)}
+.feat .art{background:linear-gradient(135deg,#164f14,#2f8f2c) !important;overflow:hidden}
+.feat .art .wm{position:absolute;right:-10px;bottom:-18px;width:150px;height:150px;color:#fff;opacity:.20;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.feat .art .badge{position:relative;z-index:2}
 .post .in{padding:18px 20px;display:flex;flex-direction:column;flex:1}
 .post .in h3{margin:0 0 8px;font-size:1.14rem;line-height:1.25}
 .post .in p{color:#4a4f4c;font-size:.95rem;flex:1;margin:0 0 14px}
@@ -54,7 +64,7 @@
 <section class="block alt"><div class="wrap">
   <div class="section-head"><div class="eyebrow">Featured</div><h2>Start here</h2></div>
   <div class="feat">
-    <div class="art"><span class="badge">Our Story</span></div>
+    <div class="art"><span class="badge">Our Story</span><svg class="wm" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg></div>
     <div class="body">
       <span class="cat">Our Story</span>
       <h2>Everyone deserves to cross a finish line</h2>
@@ -70,7 +80,7 @@
   <div class="posts">
 
     <article class="post">
-      <div class="top" style="background:linear-gradient(135deg,var(--blue),var(--sky))"><span class="cat">Education</span></div>
+      <div class="top c-edu"><span class="cat">Education</span><svg class="wm" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
       <div class="in">
         <h3>What is a &ldquo;previvor,&rdquo; and why does knowing early change everything?</h3>
         <p>One of the most hopeful words in hereditary cancer isn&rsquo;t &ldquo;survivor.&rdquo; It&rsquo;s &ldquo;previvor&rdquo; &mdash; and it names a chance a lot of families never realize they have.</p>
@@ -79,7 +89,7 @@
     </article>
 
     <article class="post">
-      <div class="top" style="background:linear-gradient(135deg,var(--purple),var(--magenta))"><span class="cat">Advocacy</span></div>
+      <div class="top c-adv"><span class="cat">Advocacy</span><svg class="wm" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V9l7-4 7 4v12"/><path d="M9 21v-6h6v6"/><path d="M9 12.5h.01M15 12.5h.01"/></svg></div>
       <div class="in">
         <h3>No one should be afraid to know their risk</h3>
         <p>Fear of insurance discrimination keeps people from getting tested. Here&rsquo;s the gap in the law, and why our founder testified for Nebraska LB 338.</p>
@@ -88,7 +98,7 @@
     </article>
 
     <article class="post">
-      <div class="top" style="background:linear-gradient(135deg,var(--magenta),var(--gold))"><span class="cat">Community</span></div>
+      <div class="top c-com"><span class="cat">Community</span><svg class="wm" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
       <div class="in">
         <h3>Who we walk for</h3>
         <p>Every step is taken in someone&rsquo;s name. Meet the people &mdash; in memory and in honor &mdash; who this event belongs to.</p>
@@ -97,7 +107,7 @@
     </article>
 
     <article class="post soon">
-      <div class="top" style="background:linear-gradient(135deg,var(--teal),var(--green))"><span class="soontag">Coming soon</span><span class="cat">Our Story</span></div>
+      <div class="top c-story"><span class="soontag">Coming soon</span><span class="cat">Our Story</span><svg class="wm" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg></div>
       <div class="in">
         <h3>26.2 steps, not miles: how a broken hip started a movement</h3>
         <p>In 2016, training for the Chicago Marathon, Denise broke her hip &mdash; and an idea was born. The origin of the world&rsquo;s only &ldquo;step&rdquo; mini marathon.</p>
@@ -106,7 +116,7 @@
     </article>
 
     <article class="post soon">
-      <div class="top" style="background:linear-gradient(135deg,var(--blue),var(--purple))"><span class="soontag">Coming soon</span><span class="cat">Expert Q&amp;A</span></div>
+      <div class="top c-expert"><span class="soontag">Coming soon</span><span class="cat">Expert Q&amp;A</span><svg class="wm" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
       <div class="in">
         <h3>A doctor&rsquo;s view: why early genetic testing matters</h3>
         <p>A conversation with our medical advisor about who should consider testing, what to expect, and how early knowledge changes outcomes.</p>
@@ -115,7 +125,7 @@
     </article>
 
     <article class="post soon">
-      <div class="top" style="background:linear-gradient(135deg,var(--gold),var(--teal))"><span class="soontag">Coming soon</span><span class="cat">Behind the event</span></div>
+      <div class="top c-event"><span class="soontag">Coming soon</span><span class="cat">Behind the event</span><svg class="wm" viewBox="0 0 24 24"><path d="M12 2l3 6.9 7.5.6-5.7 5 1.8 7.4L12 17.8 5.1 21.9l1.8-7.4-5.7-5 7.5-.6z"/></svg></div>
       <div class="in">
         <h3>Meet the people who make step day happen</h3>
         <p>Volunteers, partners, and a community that shows up every year. A look behind the finish line at the 2026 celebration.</p>
