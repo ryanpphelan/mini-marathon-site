@@ -145,3 +145,43 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   } catch (err) { /* review mode is non-critical; never break the page */ }
 });
+
+// Cookie consent banner. Analytics (GTM) load only after the visitor accepts.
+document.addEventListener('DOMContentLoaded', function () {
+  var KEY = 'mm_consent', choice = null;
+  try { choice = localStorage.getItem(KEY); } catch (e) {}
+  if (choice === 'granted' || choice === 'denied') return; // already decided
+
+  var css = ''
+    + '.mm-cc{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:760px;margin:0 auto;'
+    + 'background:#262928;color:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.35);'
+    + 'padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;'
+    + 'font:400 14px/1.5 Inter,system-ui,sans-serif}'
+    + '.mm-cc p{margin:0;flex:1;min-width:220px}'
+    + '.mm-cc a{color:#F2C334;text-decoration:underline}'
+    + '.mm-cc .b{display:flex;gap:8px;flex-wrap:wrap}'
+    + '.mm-cc button{border:0;border-radius:8px;padding:9px 16px;font:700 14px Inter,sans-serif;cursor:pointer}'
+    + '.mm-cc .ok{background:#1F641D;color:#fff}.mm-cc .no{background:#3a3e3c;color:#fff}'
+    + '@media(max-width:520px){.mm-cc .b{width:100%}.mm-cc .b button{flex:1}}';
+  var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+
+  var bar = document.createElement('div');
+  bar.className = 'mm-cc';
+  bar.setAttribute('role', 'dialog');
+  bar.setAttribute('aria-label', 'Cookie consent');
+  bar.innerHTML = '<p>We use cookies to understand how visitors use our site so we can make it better. '
+    + 'You can accept or decline analytics cookies. See our <a href="privacy.html">Privacy Policy</a>.</p>'
+    + '<div class="b"><button type="button" class="no">Decline</button>'
+    + '<button type="button" class="ok">Accept</button></div>';
+  document.body.appendChild(bar);
+
+  function close(v) {
+    try { localStorage.setItem(KEY, v); } catch (e) {}
+    if (bar.parentNode) bar.parentNode.removeChild(bar);
+  }
+  bar.querySelector('.ok').addEventListener('click', function () {
+    close('granted');
+    if (window.mmLoadGTM) window.mmLoadGTM();
+  });
+  bar.querySelector('.no').addEventListener('click', function () { close('denied'); });
+});
