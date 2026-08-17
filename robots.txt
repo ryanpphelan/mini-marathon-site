@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /donate.html
 Disallow: /shop.html
+Disallow: /change-request.html
 
 Sitemap: https://www.262minimarathon.com/sitemap.xml

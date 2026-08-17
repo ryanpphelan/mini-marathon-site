@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Cookie consent + Google Tag Manager -->
+<script>(function(){var G='GTM-KBZCFTS8';window.mmLoadGTM=function(){if(window.__gtmDone)return;window.__gtmDone=1;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',G);};try{if(localStorage.getItem('mm_consent')==='granted')window.mmLoadGTM();}catch(e){}})();</script>
+<!-- End Google Tag Manager -->
+<meta name="robots" content="noindex, nofollow">
+<title>Submit a Website Change Request — 26.2 Step Mini Marathon</title>
+<link rel="icon" href="assets/img/favicon-oval.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="nav">
+  <a class="brand" href="index.html"><img src="assets/img/logo-oval.png" alt="26.2 Step Mini Marathon logo"> 26.2 Step Mini Marathon</a>
+  <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  <nav class="nav-links" id="nav"><a href="our-cause.html">Our Cause</a><a href="denise-story.html">Denise's Story</a><a href="events.html">Events</a><a href="get-involved.html">Get Involved</a><a class="btn btn-gold" href="register.html">Join the Walk</a></nav>
+</div></header>
+<main id="main">
+<section class="hero-b"><div class="stripe"><i style="background:var(--magenta)"></i><i style="background:var(--purple)"></i><i style="background:var(--teal)"></i><i style="background:var(--blue)"></i><i style="background:var(--sky)"></i><i style="background:var(--gold)"></i></div><div class="inner">
+  <div class="eyebrow on-green">Board tool</div><h1>Submit a website change request</h1><p>Spotted something to fix or add on the site? Send it here and it&rsquo;ll go to Ryan to review. One request per submission is easiest to track.</p></div></section>
+<section class="block"><div class="wrap" style="max-width:640px">
+  <form id="crForm">
+    <input type="hidden" name="access_key" value="e4b5d4a4-6c5d-4bb6-959d-69162ad6824f">
+    <input type="hidden" name="subject" value="New website change request">
+    <input type="hidden" name="from_name" value="MM website change form">
+    <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none">
+    <div class="form-field"><label for="name">Your name</label><input id="name" name="name" type="text" required></div>
+    <div class="form-field"><label for="email">Your email (so we can follow up)</label><input id="email" name="email" type="email" required></div>
+    <div class="form-field"><label for="page">Which page or section?</label><input id="page" name="page" type="text" placeholder="e.g. About page, or a link like /photos.html" required></div>
+    <div class="form-field"><label for="ctype">Type of change</label><select id="ctype" name="change_type"><option>Text / wording edit</option><option>Photo or image</option><option>New content to add</option><option>Something looks broken</option><option>Other</option></select></div>
+    <div class="form-field"><label for="priority">Priority</label><select id="priority" name="priority"><option>Low</option><option selected>Medium</option><option>High</option></select></div>
+    <div class="form-field"><label for="desc">What would you like changed?</label><textarea id="desc" name="description" rows="5" placeholder="Describe the change. For wording edits, paste the exact new text if you can." required></textarea></div>
+    <div class="form-field"><label for="notes">Anything else? (optional)</label><textarea id="notes" name="notes" rows="3"></textarea></div>
+    <button class="btn btn-primary" type="submit" id="crBtn">Submit request</button>
+  </form>
+  <div id="crMsg" class="notice" style="display:none;margin-top:16px"></div>
+</div></section>
+</main>
+<footer class="site"><div class="wrap">
+  <div class="cols">
+    <div>
+      <div class="fbrand"><img src="assets/img/logo-oval.png" alt=""> 26.2 Step Mini Marathon</div>
+      <p class="mission">Raising awareness of hereditary cancer risk, removing barriers to education and genetic testing, and helping families take informed action &mdash; before cancer is found at a late stage.</p>
+      <span class="pill">A 501(c)(3) nonprofit in formation</span>
+    </div>
+    <div><h4>Explore</h4><a href="our-cause.html">Our Cause</a><a href="denise-story.html">Denise&rsquo;s Story</a><a href="events.html">Events</a><a href="get-involved.html">Get Involved</a><a href="photos.html">Photos</a></div>
+    <div><h4>Connect</h4><a href="about.html">About &amp; Board</a><a href="press.html">Press</a><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="legal">
+    <span>&copy; 2026 26.2 Step Mini Marathon &middot; Omaha, NE &middot; EIN 42-3384604</span>
+    <span>Internal board tool &middot; not linked publicly</span>
+  </div>
+</div></footer>
+<script src="assets/js/main.js"></script>
+<script>
+(function(){
+  var form=document.getElementById("crForm");
+  if(!form) return;
+  var msg=document.getElementById("crMsg"), btn=document.getElementById("crBtn");
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    function show(bg,bd,fg,html){ msg.style.display="block"; msg.style.background=bg; msg.style.borderColor=bd; msg.style.color=fg; msg.innerHTML=html; }
+    btn.disabled=true; var label=btn.textContent; btn.textContent="Sending…";
+    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Accept":"application/json"},body:new FormData(form)})
+      .then(function(r){return r.json();})
+      .then(function(data){
+        if(data && data.success){
+          form.style.display="none";
+          show("#eef7ee","#bfe0bf","#1f641d","<strong>Thanks!</strong> Your change request has been sent to Ryan. We&rsquo;ll take it from here.");
+        } else {
+          btn.disabled=false; btn.textContent=label;
+          show("#fdecef","#f3c0c9","#8a1f33","Something went wrong sending your request. Please try again.");
+        }
+      })
+      .catch(function(){
+        btn.disabled=false; btn.textContent=label;
+        show("#fdecef","#f3c0c9","#8a1f33","Something went wrong sending your request. Please try again.");
+      });
+  });
+})();
+</script>
+</body></html>
