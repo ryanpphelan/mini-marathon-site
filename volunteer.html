@@ -121,7 +121,7 @@
     fetch("https://api.sendx.io/api/v1/form/hJxpsoNzW54b9me9GGAFot",{method:"POST",mode:"no-cors",body:new FormData(form)})
       .then(function(){
         form.style.display="none";
-        show("#eef7ee","#bfe0bf","#1f641d","<strong>You&rsquo;re on the list!</strong> Thanks for volunteering. We&rsquo;ll be in touch with details as the event gets closer.");
+        show("#eef7ee","#bfe0bf","#1f641d","<strong>You&rsquo;re on the list!</strong> Thanks for volunteering. Watch your inbox (and your spam or promotions folder) for your confirmation, and adding us to your contacts helps our emails reach you. We&rsquo;ll be in touch with details as the event gets closer.");
       })
       .catch(function(){
         btn.disabled=false; btn.textContent=label;

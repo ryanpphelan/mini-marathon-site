@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       fetch('https://api.sendx.io/api/v1/form/v80cnDw7d7fJeVdhsfFYDl', { method: 'POST', mode: 'no-cors', body: new FormData(form) })
         .then(function () {
           if (row) row.style.display = 'none';
-          if (msg) { msg.innerHTML = 'Thanks! Check your inbox to confirm your subscription.'; msg.style.display = 'block'; }
+          if (msg) { msg.innerHTML = 'Thanks! Check your inbox to confirm your subscription. If you don&rsquo;t see it, check your spam or promotions folder. Adding us to your contacts helps future emails reach you.'; msg.style.display = 'block'; }
         })
         .catch(function () {
           if (btn) btn.disabled = false;
