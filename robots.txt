@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /donate.html
 Disallow: /shop.html
 Disallow: /change-request.html
 
