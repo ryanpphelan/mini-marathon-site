@@ -37,9 +37,6 @@
   <div class="split" style="align-items:start">
     <div class="panel">
       <h3 id="formHeading">Register for the event</h3>
-      <div id="extReg" class="notice" style="display:none;margin-bottom:16px">
-        <strong>This event is registered through Nebraska Medicine.</strong> The Cancer Survivorship Conference (Friday, September 4, 2026) is hosted by Nebraska Medicine, and registration is handled on their site. Please sign up on the <a href="https://www.nebraskamed.com/cancer/cancer-survivorship-program/events" target="_blank" rel="noopener">Nebraska Medicine events page</a>. The conference runs 8:00 am&ndash;2:00 pm; the Mini Marathon portion is 10:30&ndash;11:00 am.
-      </div>
       <form id="regForm">
         <div class="form-field"><label for="event">Event</label>
           <select id="event" name="event" required>
@@ -113,16 +110,8 @@
     june25:"North Omaha 26.2 Step Mini Marathon - Thu, June 25, 2027"
   };
   var p=new URLSearchParams(window.location.search).get("event");
-  var extReg=document.getElementById("extReg");
-  var regForm0=document.getElementById("regForm");
 
-  if(p==="sept4"){
-    // The Cancer Survivorship Conference registers through Nebraska Medicine, not here.
-    if(extReg) extReg.style.display="block";
-    if(regForm0) regForm0.style.display="none";
-    document.getElementById("formHeading").textContent="Cancer Survivorship Conference";
-    document.getElementById("eventLine").textContent="Registration for the Cancer Survivorship Conference is handled by Nebraska Medicine.";
-  } else if(p&&map[p]){
+  if(p&&map[p]){
     var sel=document.getElementById("event"); if(sel){sel.value=map[p];}
     document.getElementById("formHeading").textContent="Register: "+map[p].split(" - ")[0];
     document.getElementById("eventLine").textContent="You’re registering for the "+map[p]+". Free and open to all abilities.";
