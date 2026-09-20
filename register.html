@@ -40,7 +40,6 @@
       <form id="regForm">
         <div class="form-field"><label for="event">Event</label>
           <select id="event" name="event" required>
-            <option value="10-Year 26.2 Step Mini Marathon - Sun, Sept 20, 2026">10-Year 26.2 Step Mini Marathon &mdash; Sun, Sept 20, 2026</option>
             <option value="North Omaha 26.2 Step Mini Marathon - Thu, June 25, 2027">North Omaha 26.2 Step Mini Marathon &mdash; Thu, June 25, 2027</option>
           </select></div>
         <div class="form-field"><label for="firstName">First name</label><input id="firstName" name="First Name" type="text" required></div>
@@ -106,7 +105,6 @@
 (function(){
   // Preselect the event from ?event= and personalize the header.
   var map={
-    sept20:"10-Year 26.2 Step Mini Marathon - Sun, Sept 20, 2026",
     june25:"North Omaha 26.2 Step Mini Marathon - Thu, June 25, 2027"
   };
   var p=new URLSearchParams(window.location.search).get("event");
