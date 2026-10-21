@@ -16,6 +16,8 @@ h1,h2,h3,h4{font-family:Poppins,sans-serif;font-weight:800;line-height:1.08;lett
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
 .lead{color:var(--muted)}
 .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;padding:10px 14px;border-radius:8px;z-index:100}
+/* visible keyboard focus for low-vision/keyboard users (WCAG 2.4.7) */
+:focus-visible{outline:3px solid #1b6ef3;outline-offset:2px;box-shadow:0 0 0 2px #fff}
 
 /* buttons */
 .btn{display:inline-block;font-weight:600;cursor:pointer;border:2px solid transparent;transition:.15s;
@@ -25,7 +27,7 @@ h1,h2,h3,h4{font-family:Poppins,sans-serif;font-weight:800;line-height:1.08;lett
 .btn-gold{background:var(--gold);color:var(--ink)}.btn-gold:hover{background:#e3b423}
 .btn-ghost{background:transparent;color:var(--green);border-color:var(--green)}.btn-ghost:hover{background:var(--green);color:#fff}
 .eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.76rem;color:var(--magenta)}
-.eyebrow.gold{color:var(--gold)}.eyebrow.on-green{color:var(--gold)}
+.eyebrow.gold{color:var(--gold)}.eyebrow.on-green{color:#FAD54F}
 
 /* header */
 header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
